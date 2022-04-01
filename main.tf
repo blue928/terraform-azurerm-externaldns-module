@@ -55,6 +55,28 @@ resource "helm_release" "external_dns" {
     value = azuread_application_password.sp_externaldns_connect_to_dns_zone.value
   }
 
+  /* TODO create a Service Principal module that can feed this data in automatically.
+  set {
+    name  = "azure.tenantId"
+    value = var.azure_tenant_id
+  }
+
+  set {
+    name  = "azure.subscriptionId"
+    value = var.azure_subscription_id
+  }
+
+  set {
+    name  = "azure.aadClientId"
+    value = var.azure_client_id
+  }
+
+  set {
+    name  = "azure.aadClientSecret"
+    value = var.azure_client_secret
+  }
+  */
+
   # TODO Use dynamic block to set domain names
   set {
     name  = "domainFilters[0]"

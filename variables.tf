@@ -8,7 +8,7 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "azure_tenant_id" {
+/*variable "azure_tenant_id" {
   description = "Azure Tenant ID"
   type        = string
 }
@@ -26,6 +26,7 @@ variable "azure_subscription_id" {
   description = "The Subscription ID for your Azure Resource group"
   type        = string
 }
+*/
 
 variable "domain_name" {
   description = "the DNS Zone to to register for external DNS"
@@ -34,7 +35,7 @@ variable "domain_name" {
 
 variable "namespace" {
   description = "The namespace to deploy the external DNS kubernetes object"
-  default     = "default"
+  default     = "externaldns"
 }
 
 variable "chart_version" {
