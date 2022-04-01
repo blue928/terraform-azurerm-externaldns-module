@@ -61,5 +61,4 @@ resource "helm_release" "external_dns" {
     value = var.domain_name
   }
 
-  depends_on = [var.module_depends_on]
 }
