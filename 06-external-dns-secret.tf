@@ -1,3 +1,6 @@
+# This resource is the equivalent of the following kubectl command with --from-file as
+# documented in the external-dns docs: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md
+
 /*resource "kubernetes_secret" "azure_config_file" {
   metadata {
     name = var.azure_config_file

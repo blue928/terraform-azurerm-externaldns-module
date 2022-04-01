@@ -1,3 +1,8 @@
+# Represents the non-helm approach to implementing external DNS.
+# The external DNS 'azure.json' file is used to configure the external DNS provider
+# and has to be created before these resources can be created. See 06-external-dns-secret.tf 
+# and the non-helm instructions at: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md
+
 /*
 resource "kubernetes_manifest" "serviceaccount_external_dns" {
   manifest = {
@@ -8,7 +13,7 @@ resource "kubernetes_manifest" "serviceaccount_external_dns" {
     }
   }
 }
-*/
+
 
 
 resource "kubernetes_service_account" "serviceaccount_external_dns" {
@@ -167,4 +172,4 @@ resource "kubernetes_manifest" "deployment_external_dns" {
   depends_on = [
     kubernetes_secret.azure_config_file,
   ]
-}
+}*/
