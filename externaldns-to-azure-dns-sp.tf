@@ -1,4 +1,5 @@
-
+# Create a Service Principal for the External DNS to communicate with Azure DNS
+# for the zone in the Terraform state.
 resource "random_id" "current" {
   byte_length = 8
   prefix      = "ExternalDnsTf"
@@ -6,6 +7,9 @@ resource "random_id" "current" {
 
 # Create Azure AD App.
 # https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application
+# TODO Change the name of the service principal to contain the zone name it's communicating
+# with. This will allow for multiple SPs to be created and each be clearly identifiable in the
+# Azure Portal.
 resource "azuread_application" "sp_externaldns_connect_to_dns_zone" {
   display_name = random_id.current.hex
   owners       = [data.azuread_client_config.current.object_id]
