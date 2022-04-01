@@ -33,7 +33,7 @@ variable "domain_name" {
   type        = string
 }
 
-variable "namespace" {
+variable "cluster_namespace" {
   description = "The namespace to deploy the external DNS kubernetes object"
   default     = "externaldns"
 }

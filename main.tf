@@ -22,7 +22,7 @@ resource "helm_release" "external_dns" {
   repository       = "https://charts.bitnami.com"
   chart            = "external-dns"
   version          = var.chart_version
-  namespace        = var.namespace
+  namespace        = var.cluster_namespace
   create_namespace = true
 
   set {
