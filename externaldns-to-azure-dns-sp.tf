@@ -2,7 +2,7 @@
 # for the zone in the Terraform state.
 resource "random_id" "current" {
   byte_length = 8
-  prefix      = "ExternalDnsTf"
+  prefix      = "ExternalDnsSP"
 }
 
 # Create Azure AD App.

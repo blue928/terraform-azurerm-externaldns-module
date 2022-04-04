@@ -19,7 +19,7 @@ data "azuread_client_config" "current" {}
 # External DNS Deployment using Helm
 resource "helm_release" "external_dns" {
   name             = "external-dns"
-  repository       = "https://charts.bitnami.com"
+  repository       = "https://charts.bitnami.com/bitnami"
   chart            = "external-dns"
   version          = var.chart_version
   namespace        = var.externaldns_namespace
