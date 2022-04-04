@@ -28,7 +28,7 @@ variable "azure_subscription_id" {
 }
 */
 
-variable "domain_name" {
+variable "dns_zone_name" {
   description = "the DNS Zone to to register for external DNS"
   type        = string
 }
