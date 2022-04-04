@@ -28,12 +28,12 @@ variable "azure_subscription_id" {
 }
 */
 
-variable "dns_zone_name" {
+variable "externaldns_domain" {
   description = "the DNS Zone to to register for external DNS"
   type        = string
 }
 
-variable "cluster_namespace" {
+variable "externaldns_namespace" {
   description = "The namespace to deploy the external DNS kubernetes object"
   default     = "externaldns"
 }

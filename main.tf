@@ -22,7 +22,7 @@ resource "helm_release" "external_dns" {
   repository       = "https://charts.bitnami.com"
   chart            = "external-dns"
   version          = var.chart_version
-  namespace        = var.cluster_namespace
+  namespace        = var.externaldns_namespace
   create_namespace = true
 
   set {
@@ -80,7 +80,7 @@ resource "helm_release" "external_dns" {
   # TODO Use dynamic block to set domain names
   set {
     name  = "domainFilters[0]"
-    value = var.dns_zone_name
+    value = var.externaldns_domain
   }
 
 }
