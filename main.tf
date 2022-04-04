@@ -80,7 +80,7 @@ resource "helm_release" "external_dns" {
   # TODO Use dynamic block to set domain names
   set {
     name  = "domainFilters[0]"
-    value = var.domain_name
+    value = var.dns_zone_name
   }
 
 }
