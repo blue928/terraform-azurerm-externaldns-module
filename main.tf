@@ -1,7 +1,7 @@
 # This module requires information from the currently existing Azure environment.
 
 # A resource group needs to already exist before this module will work correctly.
-data azurerm_resource_group "rg" {
+data "azurerm_resource_group" "rg" {
   name = var.resource_group_name
 }
 
