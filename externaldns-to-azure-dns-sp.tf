@@ -35,6 +35,7 @@ resource "azuread_application_password" "sp_externaldns_connect_to_dns_zone" {
 resource "azurerm_role_assignment" "sp_externaldns_connect_to_dns_zone" {
   scope                = data.azurerm_subscription.current.id
   role_definition_name = "DNS Zone Contributor"
+  skip_service_principal_aad_check = true
 
   # When assigning to a SP, use the object_id, not the appId
   # see: https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-cli
