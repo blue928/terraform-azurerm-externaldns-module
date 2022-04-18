@@ -40,5 +40,5 @@ variable "externaldns_namespace" {
 
 variable "chart_version" {
   description = "The version of External DNS to install"
-  default     = "3.2.3"
+  default     = "6.2.4"
 }
