@@ -107,7 +107,7 @@ resource "kubernetes_manifest" "deployment_external_dns" {
     "kind"       = "Deployment"
     "metadata" = {
       "name"      = "external-dns"
-      "namespace" = "external-dns"
+      "namespace" = "default"
     }
     "spec" = {
       "selector" = {
