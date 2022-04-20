@@ -256,7 +256,7 @@ YAML
 }
 
 # service account
-resource "kubernetes_manifest" "externaldns_serviceaccount" {
+resource "kubectl_manifest" "externaldns_serviceaccount" {
   yaml_body = <<YAML
 apiVersion: v1
 kind: ServiceAccount
