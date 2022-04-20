@@ -17,7 +17,7 @@ data "azuread_client_config" "current" {}
 # for those details.
 
 # External DNS Deployment using Helm
-resource "helm_release" "external_dns" {
+/*resource "helm_release" "external_dns" {
   name             = "external-dns"
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "external-dns"
@@ -83,7 +83,7 @@ resource "helm_release" "external_dns" {
     name  = "azure.aadClientSecret"
     value = var.azure_client_secret
   }
-  */
+  
 
   # TODO Use dynamic block to set domain names
   set {
@@ -91,4 +91,4 @@ resource "helm_release" "external_dns" {
     value = "${var.externaldns_domain}"
   }
 
-}
+}*/
