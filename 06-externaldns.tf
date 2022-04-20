@@ -214,6 +214,9 @@ YAML
 
 # deployment
 resource "kubectl_manifest" "externaldns_deployment" {
+    depends_on = [
+    kubernetes_secret.azure_config_file,
+  ]
   yaml_body = <<YAML
 apiVersion: apps/v1
 kind: Deployment
@@ -249,9 +252,9 @@ spec:
       - name: azure-config-file
         secret:
           secretName: azure-config-file
-          items:
-          - key: externaldns-config.json
-            path: azure.json
+          #items:
+          #- key: externaldns-config.json
+          #  path: azure.json
 YAML
 }
 
