@@ -32,32 +32,32 @@ resource "helm_release" "external_dns" {
 
   set {
     name = "azure.secretName"
-    value = var.azure_secret_name
+    value = "${var.azure_secret_name}"
   }
 
   set {
     name  = "azure.resourceGroup"
-    value = data.azurerm_resource_group.rg.name
+    value = "${data.azurerm_resource_group.rg.name}"
   }
 
   set {
     name  = "azure.tenantId"
-    value = data.azurerm_subscription.current.tenant_id
+    value = "${data.azurerm_subscription.current.tenant_id}"
   }
 
   set {
     name  = "azure.subscriptionId"
-    value = data.azurerm_subscription.current.subscription_id
+    value = "${data.azurerm_subscription.current.subscription_id}"
   }
 
   set {
     name  = "azure.aadClientId"
-    value = azuread_application.sp_externaldns_connect_to_dns_zone.application_id
+    value = "${azuread_application.sp_externaldns_connect_to_dns_zone.application_id}"
   }
 
   set {
     name  = "azure.aadClientSecret"
-    value = azuread_application_password.sp_externaldns_connect_to_dns_zone.value
+    value = "${azuread_application_password.sp_externaldns_connect_to_dns_zone.value}"
   }
 
   /* TODO create a Service Principal module that can feed this data in automatically.
@@ -85,7 +85,7 @@ resource "helm_release" "external_dns" {
   # TODO Use dynamic block to set domain names
   set {
     name  = "domainFilters[0]"
-    value = var.externaldns_domain
+    value = "${var.externaldns_domain}"
   }
 
 }

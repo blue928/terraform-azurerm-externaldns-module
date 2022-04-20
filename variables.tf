@@ -3,6 +3,11 @@ variable "tags" {
   default     = {}
 }
 
+variable "resource_group_name" {
+  description = "The resource group name"
+  type        = string
+}
+
 /*variable "azure_tenant_id" {
   description = "Azure Tenant ID"
   type        = string
@@ -31,6 +36,7 @@ variable "externaldns_domain" {
 variable "externaldns_namespace" {
   description = "The namespace to deploy the external DNS kubernetes object"
   default     = "externaldns"
+  type = string
 }
 
 variable "chart_version" {
