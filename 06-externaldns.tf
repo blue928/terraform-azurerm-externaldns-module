@@ -141,7 +141,7 @@ resource "kubernetes_manifest" "deployment_external_dns" {
                     "command" = [
                       "/bin/sh",
                       "-c",
-                      "echo hello world",
+                      "echo hello world april",
                     ]
                   }
                 }
