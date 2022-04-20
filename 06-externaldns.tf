@@ -4,7 +4,7 @@
 # and the non-helm instructions at: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md
 
 
-resource "kubernetes_manifest" "serviceaccount_external_dns" {
+/*resource "kubernetes_manifest" "serviceaccount_external_dns" {
   manifest = {
     "apiVersion" = "v1"
     "kind" = "ServiceAccount"
@@ -12,7 +12,7 @@ resource "kubernetes_manifest" "serviceaccount_external_dns" {
       "name" = "external-dns"
     }
   }
-}
+}*/
 
 
 
