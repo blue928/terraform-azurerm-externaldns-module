@@ -48,5 +48,10 @@ variable "azure_secret_name" {
   description = "The name of the Azure Secret containing the Azure AD credentials"
   type        = string
   default     = "azure.json"
-  
+}
+
+variable "azure_config_file" {
+  description = "The name of the Azure Secret containing the Azure AD credentials"
+  type        = string
+  default     = "azure.json"
 }
