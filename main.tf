@@ -25,6 +25,8 @@ resource "helm_release" "external_dns" {
   namespace        = var.externaldns_namespace
   create_namespace = true
 
+  # be sure all set values are of type string per this bug
+  # https://github.com/hashicorp/terraform-provider-helm/issues/476
   set {
     name  = "provider"
     value = "azure"
