@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    kubectl = {
+      source = "gavinbunney/kubectl"
+      #version = ">= 1.7.0"
+    }
+  }
+}
 # This module requires information from the currently existing Azure environment.
 
 # A resource group needs to already exist before this module will work correctly.
