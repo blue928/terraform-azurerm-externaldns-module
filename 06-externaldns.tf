@@ -3,7 +3,7 @@
 # and has to be created before these resources can be created. See 06-external-dns-secret.tf 
 # and the non-helm instructions at: https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/azure.md
 
-/*
+
 resource "kubernetes_manifest" "serviceaccount_external_dns" {
   manifest = {
     "apiVersion" = "v1"
@@ -107,7 +107,7 @@ resource "kubernetes_manifest" "deployment_external_dns" {
     "kind"       = "Deployment"
     "metadata" = {
       "name"      = "external-dns"
-      "namespace" = "default"
+      "namespace" = "external-dns"
     }
     "spec" = {
       "selector" = {
@@ -172,4 +172,4 @@ resource "kubernetes_manifest" "deployment_external_dns" {
   depends_on = [
     kubernetes_secret.azure_config_file,
   ]
-}*/
+}
