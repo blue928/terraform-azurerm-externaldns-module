@@ -3,11 +3,6 @@ variable "tags" {
   default     = {}
 }
 
-variable "resource_group_name" {
-  description = "The name of the resource group where the SQL server resides"
-  type        = string
-}
-
 /*variable "azure_tenant_id" {
   description = "Azure Tenant ID"
   type        = string
@@ -41,4 +36,11 @@ variable "externaldns_namespace" {
 variable "chart_version" {
   description = "The version of External DNS to install"
   default     = "6.2.4"
+}
+
+variable "azure_secret_name" {
+  description = "The name of the Azure Secret containing the Azure AD credentials"
+  type        = string
+  default     = "azure.json"
+  
 }

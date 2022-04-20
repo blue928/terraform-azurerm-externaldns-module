@@ -31,6 +31,11 @@ resource "helm_release" "external_dns" {
   }
 
   set {
+    name = "azure.secretName"
+    value = var.azure_secret_name
+  }
+
+  set {
     name  = "azure.resourceGroup"
     value = data.azurerm_resource_group.rg.name
   }
