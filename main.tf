@@ -24,6 +24,7 @@ resource "helm_release" "external_dns" {
   version          = var.chart_version
   namespace        = var.externaldns_namespace
   create_namespace = true
+  timeout = 1200
 
   # be sure all set values are of type string per this bug
   # https://github.com/hashicorp/terraform-provider-helm/issues/476
