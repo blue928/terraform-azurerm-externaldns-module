@@ -127,6 +127,7 @@ resource "kubernetes_manifest" "deployment_external_dns" {
         "spec" = {
           "containers" = [
             {
+              "name" = "external-dns"
               "args" = [
                 "--source=service",
                 "--source=ingress",
@@ -146,7 +147,6 @@ resource "kubernetes_manifest" "deployment_external_dns" {
                   }
                 }
               }
-              "name" = "myapp"
               "volumeMounts" = [
                 {
                   "mountPath" = "/etc/kubernetes"
