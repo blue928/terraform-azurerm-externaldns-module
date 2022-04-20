@@ -27,7 +27,7 @@ resource "kubernetes_service_account" "serviceaccount_external_dns" {
   #}
 }
 
-resource "kubernetes_manifest" "clusterrole_external_dns" {
+/*resource "kubernetes_manifest" "clusterrole_external_dns" {
   manifest = {
     "apiVersion" = "rbac.authorization.k8s.io/v1"
     "kind"       = "ClusterRole"
@@ -77,9 +77,9 @@ resource "kubernetes_manifest" "clusterrole_external_dns" {
       },
     ]
   }
-}
+}*/
 
-resource "kubernetes_manifest" "clusterrolebinding_external_dns_viewer" {
+/*resource "kubernetes_manifest" "clusterrolebinding_external_dns_viewer" {
   manifest = {
     "apiVersion" = "rbac.authorization.k8s.io/v1"
     "kind"       = "ClusterRoleBinding"
@@ -99,9 +99,9 @@ resource "kubernetes_manifest" "clusterrolebinding_external_dns_viewer" {
       },
     ]
   }
-}
+}*/
 
-resource "kubernetes_manifest" "deployment_external_dns" {
+/*resource "kubernetes_manifest" "deployment_external_dns" {
   manifest = {
     "apiVersion" = "apps/v1"
     "kind"       = "Deployment"
@@ -172,4 +172,4 @@ resource "kubernetes_manifest" "deployment_external_dns" {
   depends_on = [
     kubernetes_secret.azure_config_file,
   ]
-}
+}*/
