@@ -48,10 +48,10 @@ resource "helm_release" "external_dns" {
     value = "azure"
   }
 
-  set {
-    name = "azure.secretName"
-    value = "${var.azure_secret_name}"
-  }
+  #set {
+  #  name = "azure.secretName"
+  #  value = "${var.azure_secret_name}"
+  #}
 
   set {
     name  = "azure.resourceGroup"
