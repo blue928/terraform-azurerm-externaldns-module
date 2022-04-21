@@ -24,14 +24,21 @@ data "azuread_client_config" "current" {}
 # wait until this resource has been created. See file: external-dns-to-azure-dns-sp.tf
 # for those details.
 
+resource "kubernetes_namespace_v1" "externaldns_ns" {
+  metadata {
+    annotations = {}
+    labels      = {}
+    name        = var.externaldns_namespace
+  }
+}
+
 # External DNS Deployment using Helm
 resource "helm_release" "external_dns" {
   name             = "external-dns"
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "external-dns"
   version          = var.chart_version
-  namespace        = var.externaldns_namespace
-  create_namespace = true
+  namespace        = kubernetes_namespace_v1.externaldns_ns.metadata.name
   timeout = 1200
 
   # be sure all set values are of type string per this bug
