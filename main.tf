@@ -38,7 +38,7 @@ resource "helm_release" "external_dns" {
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "external-dns"
   version          = var.chart_version
-  namespace        = kubernetes_namespace_v1.externaldns_ns.metadata.name
+  namespace        = kubernetes_namespace_v1.externaldns_ns.metadata[0].name
   timeout = 1200
 
   # be sure all set values are of type string per this bug
